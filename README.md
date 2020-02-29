@@ -57,7 +57,10 @@
 
 
 ## item_imageテーブル
-||text||
+|Column|Type|Options|
+|------|----|-------|
+|item_id|text||
+|user_id|text||
 ### Association
 -has_many :item_images
 
