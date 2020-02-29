@@ -57,7 +57,7 @@
 
 
 ## item_imageテーブル
-|text|text||
+||text||
 ### Association
 -has_many :item_images
 
@@ -102,23 +102,33 @@
 ## to-doテーブル
 |Column|Type|Options|
 |------|----|-------|
-||||
+|to-do_list|text||
+### Association
+-has_many :users
 
 
 ## noticeテーブル
 |Column|Type|Options|
 |------|----|-------|
-
+|notice_list|text||
+### Association
+-has_many :users
 
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text||
+|item_comment|text||
 ### Association
 -belong_to :user, foreign_key: ‘user_id’
 -belong_to :item, foreign_key: ‘item_id’
 
 ## paymentテーブル
-|payment|string|null: false|
+|Column|Type|Options|
+|------|----|-------|
+|card_number|integer|null: false|
+|expiration_month|integer|null: false|
+|expiration_year|integer|null: false|
+|security_code|integer|null: false|
 ### Association
+-belong_to :user
