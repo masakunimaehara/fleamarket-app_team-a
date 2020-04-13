@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def address_new
+  end
+
   def show
     notices = [
                   {text:"事務局からのメッセージ　新型コロナウイルスに伴うマスクの転売を禁止します。発覚した場合は死刑に処します",
