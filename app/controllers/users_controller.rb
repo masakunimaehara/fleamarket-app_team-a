@@ -1,6 +1,15 @@
 class UsersController < ApplicationController
   def address_new
+    @user = User.new
+    @user.build_address
   end
+
+  def address_create
+    @user = User.new(user_params)
+    @user.save
+    redirect_to "#"
+  end
+
 
   def show
     notices = [
@@ -60,4 +69,10 @@ class UsersController < ApplicationController
     @todos = todos.reverse
     @saling_item_quantity = Item.where(seller_id: params[:id]).where(buyer_id: nil).where(auction_id: nil).length
   end
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :family_name,:first_name_reading,:family_name_reading,:phone_number,address_attributes:[:id, :postal_code, :prefectures, :municipality, :block_number,:building,:user_id])
+  end
+
 end

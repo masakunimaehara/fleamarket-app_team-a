@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: "items#index"
 
   resources :users, only: :show do 
-    collection do
+    member do
       get 'address_new'
       post 'address_create'
       get 'address_edit'

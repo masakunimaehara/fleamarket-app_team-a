@@ -25,11 +25,12 @@ class User < ApplicationRecord
   has_many :saling_items, -> { where("seller_id is not NULL && buyer_id is NULL") }, class_name: "Item"
   has_many :auction_items, -> { where("seller_id is not NULL && auction_id is not NULL && buyer_id is NULL") }, class_name: "Item"
   has_many :sold_items, -> { where("seller_id is not NULL && buyer_id is not NULL && auction_id is NULL") }, class_name: "Item"
- 
+  
 
   # has_many :comments, dependent: :destroy
   # has_many :payments, dependent: :destroy
-  # has_one :address, dependent: :destroy
+  has_one :address, dependent: :destroy
+  accepts_nested_attributes_for :address
   # has_many :evaluation_notices,dependent: :destroy
   # has_many :good_notices,dependent: :destroy
   # has_many :comment_notices,dependent: :destroy
