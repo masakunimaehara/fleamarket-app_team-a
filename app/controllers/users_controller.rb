@@ -1,13 +1,16 @@
 class UsersController < ApplicationController
+
   def address_new
-    @user = User.new
+    @user = User.find(params[:id])
     @user.build_address
   end
 
   def address_create
-    @user = User.new(user_params)
-    @user.save
-    redirect_to "#"
+    @user = User.find(params[:id])
+    @user.build_address
+    @user.update(user_address_params)
+    binding.pry
+    redirect_to root_path
   end
 
 
@@ -69,10 +72,11 @@ class UsersController < ApplicationController
     @todos = todos.reverse
     @saling_item_quantity = Item.where(seller_id: params[:id]).where(buyer_id: nil).where(auction_id: nil).length
   end
+
   private
 
-  def user_params
-    params.require(:user).permit(:first_name, :family_name,:first_name_reading,:family_name_reading,:phone_number,address_attributes:[:id, :postal_code, :prefectures, :municipality, :block_number,:building,:user_id])
+  def user_address_params
+     params.require(:user).permit(:first_name, :family_name,:first_name_reading,:family_name_reading,:phone_number,address_attributes:[:id, :postal_code, :prefectures, :municipality, :block_number,:building,:user_id]).merge(id:params[:id],email:User.find(params[:id]).email,phone_number:User.find(params[:id]).phone_number,encrypted_password:User.find(params[:id]).encrypted_password)
   end
 
 end
