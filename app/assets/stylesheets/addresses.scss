@@ -1,3 +1,151 @@
-// Place all the styles related to the addresses controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.l-chapter-container {
+  background: #fff;
+}
+
+.l-container {
+  width: 700px;
+  margin: 24px auto 0;
+  padding: 0 0 40px;
+}
+
+.l-content {
+  float: none;
+  width: 700px;
+}
+
+.l-chapter-container {
+  margin: 0;
+}
+
+.l-chapter-head {
+  font-size: 24px;
+  padding: 8px 24px;
+  border-bottom: 1px solid #f5f5f5;
+  text-align: center;
+}
+
+.l-single-inner_registration-form {
+  padding: 24px 16px 40px;
+  border-top: 1px solid #f5f5f5;
+}
+
+.l-single-inner {
+  border-top: 1px solid #f5f5f5;
+}
+
+.l-single-inner_registration-form .l-single-content {
+  max-width: 343px;
+}
+
+.l-single-content {
+  margin: 0 auto;
+}
+
+.form-group {
+  &:first-child {
+    margin: 0;
+  }
+
+  label {
+    font-weight: 600;
+  }
+}
+
+.form-require {
+  background: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.form-arbitrary {
+  background: #ccc;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.form-group .input-default {
+  width: 100%;
+  margin: 8px 0 0;
+}
+
+.input-default {
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.l-single-inner_registration-form .form-group:not(:first-of-type) {
+  margin: 24px 0 0;
+}
+
+.form-group .delect-wrap {
+  margin: 8px 0 0;
+}
+
+.select-wrap {
+  position: relative;
+  background: #fff;
+
+  .icon-arrow-bottom {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    z-index: 2;
+    color: #888;
+    font-size: 8px;
+    transform: translate(0, -50%);
+  }
+}
+
+.form-group select {
+  width: 100%;
+}
+
+.select-default {
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.l-single-inner_registration-form .btn-red {
+  margin: 24px 0 0;
+}
+
+.btn-red {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+
+.btn-default {
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
