@@ -1,0 +1,26 @@
+.mypageMainContainer
+  .mypageMainContainer__leftContnet
+    = render partial: "addresses/index_inner/address_index_mypageLeft"
+  .mypageMainContainer__rightContnet
+    - unless current_user.address
+      = link_to "新規作成",new_address_path
+    - else 
+      なまえ：
+      = @address.address_first_name
+      みょうじ：
+      = @address.address_family_name
+      ゆうびんばんごう：
+      = @address.postal_code
+      県：
+      = ShipFrom.data[@address.prefectures.to_i - 1][:name]
+      市：
+      = @address.municipality
+      番地：
+      = @address.block_number
+      ビル名：
+      = @address.building
+
+      = link_to "編集する",edit_address_path(current_user.address.id)
+      = link_to "削除する",address_path(current_user.address.id),method: :DELETE
+      
+      

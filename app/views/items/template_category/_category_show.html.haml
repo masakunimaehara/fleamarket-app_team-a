@@ -6,13 +6,25 @@
       = ">"
     .categoryROOT__name
       = categoryNAME
-- @items.each do |item|
-  .items
-    = "商品名：#{item.name}"
-    = "価格：#{item.price}"
-    - selluser = User.find(item.seller_id)
-    = "出品者：#{selluser.nickname}"
-    = link_to "詳細", item_path(item.id)
-
-
-
+.goods__new
+  .goods__new__item
+    .goods__new__item__box#ladies-items
+      .goods__new__item__box__category
+        商品一覧
+    .goods__new__item__list
+      - @items.each do |item|
+        = link_to item_path(id: item.id) ,class:"goods__new__item__list__show" do
+          .goods__new__item__list__show__image
+            = image_tag (item.item_images[0].image.url),size: "184x184"
+          .goods__box__lists__list__anchor1__content
+            .goods__box__lists__list__anchor1__content__name
+              =item.name
+          .goods__box__lists__list__anchor1__content__description
+            %ul
+              %li
+                = item.price
+                円
+            -if item.buyer_id.present?
+              .items__sold
+                .items__sold__inner
+                  SOLD

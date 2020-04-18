@@ -52,15 +52,15 @@
                 %span.form-require
                   必須
               .sell__main__content__form__box__group__select#parent_box
-                = @item.parent_category.name
-              .sell__main__content__form__box__group__select#child_box
-                = @item.children_category.name
-              .sell__main__content__form__box__group__select#grandchild_box
-                = @item.category.name
-              %label
-                ブランド
-                %span.form-require_brand
-                  任意
+                .edit-box
+                  = @item.parent_category.name
+                .edit-box
+                  = @item.children_category.name
+                .edit-box
+                  = @item.category.name
+              ブランド
+              %span.form-require_brand
+                任意
               .sell__main__content__form__box__group__select
                 = f.collection_select :brand_id, Brand.all, :id, :name, {prompt: "選択してください"}, class: "sell__main__content__form__box__group__select__form"
               %label
